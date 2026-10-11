@@ -1,0 +1,8 @@
+{
+  "description": "Core production-source target plus whole-source regression floors. These are not whole-app 90% claims. Native Objective-C adapters require separate validation. See docs/testing.md.",
+  "minimums": {
+    "swing": {"core.lines": 90, "core.branches": 85, "overall.lines": 62},
+    "fx": {"core.lines": 90, "core.branches": 85, "overall.lines": 75},
+    "swift": {"core.lines": 90, "core.regions": 85, "overall.lines": 61}
+  }
+}
