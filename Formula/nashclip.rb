@@ -1,9 +1,9 @@
 class Nashclip < Formula
   desc "Local macOS clipboard history with a sliding drawer"
   homepage "https://github.com/kavinash09/nashclips"
-  url "https://github.com/kavinash09/nashclips/archive/e4da8e80dc33c5ec1d081f8297c40c5574f08467.tar.gz"
-  version "1.0-preview.1"
-  sha256 "6e30a9854d9f27851f5b524910f0d55de7a4eb8177a00baa0f88cb8691fa956d"
+  url "https://github.com/kavinash09/nashclips/releases/download/v1.0.1/nashclip-1.0.1-source.tar.gz"
+  version "1.0.1"
+  sha256 "de275027f6118db2ce22d1fcb1f0f067d57bb2b6e2445bbed1bf92497947ef03"
   license "Apache-2.0"
 
   depends_on macos: :ventura
@@ -19,7 +19,7 @@ class Nashclip < Formula
 
   def caveats
     <<~EOS
-      This preview builds the Swift app locally using Apple's Command Line Tools.
+      This source release builds the Swift app locally using Apple's Command Line Tools.
       Launch with: nashclip
 
       Quit other nashclip variants before launching or upgrading.
@@ -38,6 +38,9 @@ class Nashclip < Formula
     assert_predicate app/"Contents/MacOS/nashclip", :executable?
     assert_path_exists app/"Contents/Resources/LICENSE"
     assert_path_exists app/"Contents/Resources/NOTICE"
+    bundle_version = Utils.safe_popen_read("/usr/bin/plutil", "-extract", "CFBundleShortVersionString",
+                                          "raw", "-o", "-", app/"Contents/Info.plist").strip
+    assert_equal version.to_s, bundle_version
     system "/usr/bin/codesign", "--verify", "--deep", "--strict", app
   end
 end

@@ -1,6 +1,6 @@
 # nashclip: agent handoff
 
-Last updated: **2026-10-11** (Asia/Kolkata). Applies to this project and its three implementations.
+Last updated: **2026-11-17** (Asia/Kolkata). Applies to this project and its three implementations.
 
 ## Read first
 
@@ -12,6 +12,16 @@ Last updated: **2026-10-11** (Asia/Kolkata). Applies to this project and its thr
 These files are a handoff, not live system state. Recheck running processes, OS permissions, source changes, and tool versions before acting. Earlier dated audits describe their own runs.
 
 ## Current work to resume
+
+2026-11-17 source release 1.0.1: published GitHub Release `v1.0.1` with an exact
+source archive and SHA256SUMS; tag source commit is `026fe06`. Swift bundle
+version is 1.0.1, build 2. Fresh archive build and 38 Python tooling tests passed;
+public asset download/checksum and Homebrew formula style passed. Formula now
+points to the release asset and tests bundle version. Formula push and real
+preview-to-1.0.1 upgrade remain pending in this checkpoint; see project memory
+for final completion. This is source distribution, with the existing app
+acceptance and signed binary gaps still open.
+
 
 2026-11-17: user requested Homebrew publication, confirmed no Apple Developer
 membership, and requested use of the existing Git client. Added a personal-tap

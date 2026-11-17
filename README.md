@@ -5,7 +5,7 @@
 
 nashclip is a small clipboard history app for macOS inspired by the quick recall of Windows **Win + V**. It keeps recently copied text within reach in a drawer at the edge of the screen. The project also explores the same app through three UI approaches: Java Swing, JavaFX, and native SwiftUI with AppKit.
 
-**Status:** active development. Local source builds and a Homebrew source-preview formula are available in this repository; a signed binary release remains pending.
+**Status:** active development. Local source builds and a Homebrew source formula are available in this repository; a signed binary release remains pending.
 
 [Installation](INSTALL.md) · [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md) · [Security](SECURITY.md) · [Release guide](RELEASING.md)
 
@@ -48,7 +48,9 @@ Open Terminal in the repository root before running one of these commands. You c
 
 ## Homebrew distribution
 
-The native Swift app has a [source-preview formula](homebrew/README.md). It builds on your Mac using Apple's Command Line Tools, with no paid Apple Developer membership needed. Install it with:
+[Version 1.0.1](https://github.com/kavinash09/nashclips/releases/tag/v1.0.1) is published with a source archive and checksum.
+
+The native Swift app has a [source formula](homebrew/README.md). It builds on your Mac using Apple's Command Line Tools, with no paid Apple Developer membership needed. Install it with:
 
 ```sh
 brew tap kavinash09/nashclip https://github.com/kavinash09/nashclips.git
@@ -56,7 +58,7 @@ brew install --formula kavinash09/nashclip/nashclip
 nashclip
 ```
 
-Install compatible Command Line Tools first with `xcode-select --install` if needed. This development preview lives inside Homebrew's directory, not `/Applications`. Quit other variants before launching; automatic paste still requires Accessibility permission. History remains local plaintext. Only the local Apple Silicon build has been validated; the outstanding app acceptance checks remain open.
+Install compatible Command Line Tools first with `xcode-select --install` if needed. This source release lives inside Homebrew's directory, not `/Applications`. Quit other variants before launching; automatic paste still requires Accessibility permission. History remains local plaintext. Only the local Apple Silicon build has been validated; the outstanding app acceptance checks remain open.
 
 The separate [binary cask tooling and publishing guide](docs/homebrew.md) generates a release ZIP, checksum, and cask. That prebuilt distribution still requires Developer ID signing, notarization, and release acceptance testing under this project's release policy. No signed binary package has been published. A local package-layout preview is available with `python3 scripts/package-homebrew.py --preview --output dist/homebrew-preview` after building the Swift app.
 

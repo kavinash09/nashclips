@@ -1,6 +1,6 @@
 # Distributing nashclip with Homebrew
 
-## Source preview without a Developer ID certificate
+## Source releases without a Developer ID certificate
 
 On 2026-11-17 the user confirmed that they do not have an Apple Developer
 membership and requested Homebrew publication using the existing Git client.
@@ -13,6 +13,8 @@ or disable Gatekeeper. The formula pins source commit
 `e4da8e80dc33c5ec1d081f8297c40c5574f08467` and its downloaded archive checksum.
 The formula version `1.0-preview.1` identifies this development package; it does
 not change the app's existing `1.0` bundle version or clear release blockers.
+
+Version **1.0.1** is now published through [GitHub Releases](https://github.com/kavinash09/nashclips/releases/tag/v1.0.1), with an uploaded source archive and SHA256SUMS. The current formula downloads that exact release asset rather than the initial preview commit archive. Its Swift bundle version is 1.0.1, build 2.
 
 Publication and real-install verification for this route are recorded in
 [project memory](project-memory.md). The remaining instructions below cover

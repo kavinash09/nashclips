@@ -5,6 +5,33 @@
 
 ## 1. Current state in one minute
 
+**2026-11-17 version 1.0.1 source release:** the user explicitly requested
+publication as 1.0.1 and asked about cost; the public source-release route uses
+no paid build service or Apple membership. Bumped the Swift short version to
+1.0.1 and build number to 2, updated CHANGELOG, and added release notes at
+`docs/releases/1.0.1.md`. Tag `v1.0.1` points to source commit
+`026fe0634a323c8805b1f3091aa9cf662ba2a3ad`.
+
+Published GitHub Release https://github.com/kavinash09/nashclips/releases/tag/v1.0.1
+with `nashclip-1.0.1-source.tar.gz` and `SHA256SUMS`. Archive SHA-256:
+`de275027f6118db2ce22d1fcb1f0f067d57bb2b6e2445bbed1bf92497947ef03`.
+The archive was produced with `git archive` from the tag and deterministic gzip,
+checked for version/license contents and absence of generated outputs, and
+built successfully from a fresh extraction. All 38 Python tooling tests passed.
+GitHub upload digests and an unauthenticated public download matched local bytes.
+The formula is updated to that release asset and version 1.0.1; its test also
+checks the installed bundle version. Homebrew style passed with no offenses.
+Formula publication and the actual preview-to-1.0.1 upgrade are the remaining
+steps at this checkpoint. This source publication does not clear the signed
+binary, native paste, profiling, Intel, or clean-machine acceptance gaps.
+
+Git pushes used the existing Git client. GitHub Releases operations used the
+same GitHub credential via Git's credential helper, kept in process memory and
+sent only to GitHub's API. No credential value was printed or written to files;
+do not put credentials in the repository or run `git credential fill` directly
+in a way that prints its output.
+
+
 **2026-11-17 Homebrew source preview:** the user requested publication and
 confirmed they have no Apple Developer membership, then explicitly requested
 the existing Git client. Added `Formula/nashclip.rb`, using the existing public

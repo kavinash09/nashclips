@@ -1,8 +1,8 @@
 # Installing nashclip
 
-**Current status:** source builds and a Homebrew source-preview formula are published. A signed downloadable release remains pending. For maintainers preparing a binary release, see [RELEASING.md](RELEASING.md).
+**Current status:** source builds and Homebrew source release 1.0.1 are published. A signed downloadable release remains pending. For maintainers preparing a binary release, see [RELEASING.md](RELEASING.md).
 
-## Homebrew source preview
+## Homebrew source release
 
 With Homebrew and compatible Apple Command Line Tools installed:
 
@@ -15,7 +15,7 @@ nashclip
 If the tools are missing, run `xcode-select --install` and finish installation first.
 This formula compiles the Swift app locally and launches it from Homebrew's
 directory, rather than `/Applications`. No paid Apple Developer membership is
-needed. It is a development preview, not a notarized download. Only Apple Silicon
+needed. It is a source release, not a notarized download. Only Apple Silicon
 has been validated locally; other supported combinations still need testing.
 See [the formula guide](homebrew/README.md) for updates and removal. Quit other
 variants before launching and enable Accessibility for automatic paste.

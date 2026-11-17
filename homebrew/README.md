@@ -5,7 +5,7 @@ The formula is in `Formula/nashclip.rb` at the root of the existing
 no separate GitHub repository is needed. Publication status is recorded in
 `docs/homebrew.md`; local files alone do not mean that the tap is live.
 
-## Install the source preview
+## Install version 1.0.1
 
 On a Mac with Homebrew and compatible Apple Command Line Tools installed:
 
@@ -21,9 +21,9 @@ app for your Mac. It needs no Java or paid Apple Developer membership. macOS 13
 is the app deployment target; Homebrew and the installed compiler have their
 own supported OS requirements. Only Apple Silicon has been validated locally.
 
-This is a development preview, not a signed/notarized binary release. The source
-is pinned to commit `e4da8e80dc33c5ec1d081f8297c40c5574f08467` with an exact archive
-checksum. It is a personal-tap formula, not a submission to `homebrew/core` or
+This is a source release, not a signed/notarized binary release. The formula
+downloads the exact source archive attached to GitHub Release `v1.0.1`, pinned
+by its SHA-256 checksum. It is a personal-tap formula, not a submission to `homebrew/core` or
 `homebrew/cask`.
 
 The app lives inside Homebrew's installation directory, not `/Applications`.
@@ -51,8 +51,10 @@ Uninstalling preserves your history and settings.
 
 ## Maintain
 
-For each update, edit `Formula/nashclip.rb`: pin the new upstream source commit,
-calculate its archive SHA-256, and increment the formula version. Test the real Homebrew source installation and
+For each update, bump the app version and build number, tag the source, and
+publish an archive plus SHA256SUMS on GitHub Releases. Then update the release
+asset URL, SHA-256, and version in `Formula/nashclip.rb`. Test a real source
+installation or upgrade and
 `brew test kavinash09/nashclip/nashclip` before pushing. Do not add bottles of
 the ad hoc app: this route intentionally builds locally.
 
