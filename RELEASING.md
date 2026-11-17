@@ -1,5 +1,20 @@
 # Preparing and publishing a release
 
+## Published source-preview route
+
+The user has no Apple Developer membership. The personal-tap formula at
+`Formula/nashclip.rb` builds the Swift app locally on the receiving Mac; it
+does not publish a signed binary. The existing `kavinash09/nashclips` GitHub
+repository is the tap, added with an explicit remote URL. See
+[source-preview installation and maintenance](homebrew/README.md). Update its
+pinned source commit, archive checksum, and formula version for each source
+preview. Validate a real Homebrew build, `brew test`, and formula style before
+pushing with Git. This route has no bottles and does not bypass Gatekeeper.
+The broader app acceptance blockers still apply; source-preview availability
+is not production approval.
+
+The checklist below describes the separate future signed binary release.
+
 This is the maintainer checklist for **Avinash Kumar**. The initial Homebrew target is the native Swift app. Java variants remain source builds. Repository preparation is complete only after the GitHub-side settings below are configured; production approval also requires the release tests.
 
 ## One-time repository setup

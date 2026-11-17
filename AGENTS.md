@@ -20,9 +20,11 @@ source formula at `Formula/nashclip.rb` and installation guide in
 and installs formula version `1.0-preview.1` with a `nashclip` launch command.
 The existing `kavinash09/nashclips` GitHub repository doubles as the tap through
 an explicit URL. Real local Homebrew source installation, bundle/signature
-tests, and formula style checks passed on Apple Silicon. Publication verification
-and local tap remote correction are pending in this checkpoint; see current
-project memory for completion. No real app launch/paste, permission change,
+tests, and formula style checks passed on Apple Silicon. Formula/docs commit
+`317a35d` was pushed to the existing GitHub repository. A fresh public tap clone
+matched it, a second source installation succeeded, and `brew test` passed
+again. The installed tap uses the correct public remote. See project memory
+for installation commands. No real app launch/paste, permission change,
 Developer ID signing, or production approval is implied. The repository now
 has Git on `main` with the public GitHub origin; October's no-Git notes are historical.
 

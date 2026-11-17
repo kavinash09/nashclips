@@ -18,12 +18,26 @@ report outputs and documented installation in README/INSTALL/homebrew guides.
 Verified locally on Apple Silicon: downloaded the real GitHub source archive,
 rebuilt Swift, installed the formula through real Homebrew from a temporary
 local tap, passed `brew test` (executable/resources/signature), and passed
-`brew style` with no offenses. The app was not launched and no real clipboard,
-history, or Accessibility permission was changed. Publication is pending the
-Git commit/push and public formula verification at this point. The local tap
-currently points to a disposable staging repository; replace its origin with
-the public project URL after pushing. Developer ID/cask release, clean-machine,
-Intel, real paste, and broader app acceptance remain unverified.
+`brew style` with no offenses. The tests did not launch the app, access real
+history, or change Accessibility permission. Published formula/docs commit `317a35d` to `origin/main` using the
+existing Git client. A fresh Homebrew tap cloned that public commit, matched
+the formula byte-for-byte, and uses the public project URL rather than the
+disposable staging repository. A second real installation from that public tap
+succeeded, and `brew test kavinash09/nashclip/nashclip` passed again. The local
+app is installed at `/opt/homebrew/opt/nashclip/libexec/nashclip.app`, with
+`/opt/homebrew/bin/nashclip` as launcher. Removing the temporary tap with
+`brew untap --force` also uninstalled its formula on this Homebrew version;
+the successful public-tap installation restored it. No user history was removed.
+Developer ID/cask release, clean-machine, Intel, real paste, and broader app
+acceptance remain unverified.
+
+Install on another Mac with Homebrew and compatible Command Line Tools:
+
+```sh
+brew tap kavinash09/nashclip https://github.com/kavinash09/nashclips.git
+brew install --formula kavinash09/nashclip/nashclip
+nashclip
+```
 
 Git now exists: branch `main`, origin `https://github.com/kavinash09/nashclips.git`.
 Historical statements below saying no Git repository describe October's state.

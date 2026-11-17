@@ -48,7 +48,7 @@ Open Terminal in the repository root before running one of these commands. You c
 
 ## Homebrew distribution
 
-The native Swift app has a [source-preview formula](homebrew/README.md). It builds on your Mac using Apple's Command Line Tools, with no paid Apple Developer membership needed. Once the formula commit is pushed, install it with:
+The native Swift app has a [source-preview formula](homebrew/README.md). It builds on your Mac using Apple's Command Line Tools, with no paid Apple Developer membership needed. Install it with:
 
 ```sh
 brew tap kavinash09/nashclip https://github.com/kavinash09/nashclips.git

@@ -1,6 +1,6 @@
 # Installing nashclip
 
-**Current status:** source builds and a Homebrew source-preview formula are prepared. The formula becomes installable from GitHub once its commit is pushed. A signed downloadable release remains pending. For maintainers preparing a binary release, see [RELEASING.md](RELEASING.md).
+**Current status:** source builds and a Homebrew source-preview formula are published. A signed downloadable release remains pending. For maintainers preparing a binary release, see [RELEASING.md](RELEASING.md).
 
 ## Homebrew source preview
 
