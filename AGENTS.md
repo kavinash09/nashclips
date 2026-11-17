@@ -16,10 +16,11 @@ These files are a handoff, not live system state. Recheck running processes, OS 
 2026-11-17 source release 1.0.1: published GitHub Release `v1.0.1` with an exact
 source archive and SHA256SUMS; tag source commit is `026fe06`. Swift bundle
 version is 1.0.1, build 2. Fresh archive build and 38 Python tooling tests passed;
-public asset download/checksum and Homebrew formula style passed. Formula now
-points to the release asset and tests bundle version. Formula push and real
-preview-to-1.0.1 upgrade remain pending in this checkpoint; see project memory
-for final completion. This is source distribution, with the existing app
+public asset download/checksum and Homebrew formula style passed. Formula update commit `fb61571` was pushed and the formula now points to the
+release asset and tests bundle version. The actual Homebrew upgrade from
+`1.0-preview.1` to `1.0.1` succeeded; the installed version/build are 1.0.1/2,
+and `brew test` passed. Public release metadata and both downloadable assets
+were verified without authentication. See project memory for evidence. This is source distribution, with the existing app
 acceptance and signed binary gaps still open.
 
 

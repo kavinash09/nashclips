@@ -21,8 +21,15 @@ built successfully from a fresh extraction. All 38 Python tooling tests passed.
 GitHub upload digests and an unauthenticated public download matched local bytes.
 The formula is updated to that release asset and version 1.0.1; its test also
 checks the installed bundle version. Homebrew style passed with no offenses.
-Formula publication and the actual preview-to-1.0.1 upgrade are the remaining
-steps at this checkpoint. This source publication does not clear the signed
+Formula update commit `fb61571` was pushed to the public tap. Refreshed that
+tap and successfully ran `brew upgrade --formula kavinash09/nashclip/nashclip`
+from `1.0-preview.1` to `1.0.1`. The upgraded formula test passed, including
+short-version equality, executable/license presence, and strict signature
+verification. Direct plist inspection confirmed version 1.0.1, build 2.
+Unauthenticated public release metadata, source download, and SHA256SUMS
+verification passed. Evidence metadata is in ignored `dist/release-1.0.1/`
+(`publication.json` and `public-verification.json`); no credentials are stored
+there. No real app launch/paste or Accessibility change was performed. This source publication does not clear the signed
 binary, native paste, profiling, Intel, or clean-machine acceptance gaps.
 
 Git pushes used the existing Git client. GitHub Releases operations used the
