@@ -1,6 +1,6 @@
 # nashclip architecture map and walkthrough
 
-**Source checked:** 2026-10-11. See [project memory](project-memory.md) for chronology and current state, and [AGENTS.md](../AGENTS.md) for future-agent guidance.
+**Source checked:** 2026-10-11; source-formula packaging added 2026-11-17. See [project memory](project-memory.md) for chronology and current state, and [AGENTS.md](../AGENTS.md) for future-agent guidance.
 
 ## 1. Repository map
 
@@ -49,6 +49,13 @@ mcopier/                         # checkout name; product branding is nashclip
 ```
 
 Build outputs include Swing `out/`, JavaFX `target/`, Swift `build/` and `.build/`, native executables/libraries, and `.test-tools/`. Edit source and rebuild; avoid hand-editing generated binaries.
+
+`Formula/nashclip.rb` makes this repository a personal Homebrew source tap. It
+downloads a checksum-pinned public source commit and calls the Swift build
+script on the installing Mac. The locally signed app goes under formula
+`libexec`; `bin/nashclip` launches it using a stable Homebrew opt path. This
+route needs Command Line Tools and does not use the binary cask packager.
+See [the source formula guide](../homebrew/README.md).
 
 Homebrew packaging outputs belong in ignored `dist/`. The packager consumes an existing Swift bundle; it does not compile, sign, notarize, install, or publish it. Release mode verifies distribution prerequisites before producing a cask, while preview mode emits a labelled draft. See the [Homebrew guide](homebrew.md) for the complete publishing sequence.
 

@@ -1,9 +1,34 @@
 # nashclip project memory
 
-**Updated:** 2026-10-11, Asia/Kolkata.  
+**Updated:** 2026-11-17, Asia/Kolkata.
 **Purpose:** durable handoff from the conversation and inspected source. Read [AGENTS.md](../AGENTS.md) for working guidance and the [architecture walkthrough](architecture-walkthrough.md) for implementation paths.
 
 ## 1. Current state in one minute
+
+**2026-11-17 Homebrew source preview:** the user requested publication and
+confirmed they have no Apple Developer membership, then explicitly requested
+the existing Git client. Added `Formula/nashclip.rb`, using the existing public
+`kavinash09/nashclips` repository as the tap via an explicit `brew tap` URL.
+It builds source commit `e4da8e80dc33c5ec1d081f8297c40c5574f08467` on the receiving
+Mac, checksum-pinned, as formula version `1.0-preview.1`. It installs the app
+under Homebrew's libexec with a `nashclip` launcher. No paid signing certificate,
+binary cask, or Gatekeeper bypass is involved. Added `.gitignore` for build and
+report outputs and documented installation in README/INSTALL/homebrew guides.
+
+Verified locally on Apple Silicon: downloaded the real GitHub source archive,
+rebuilt Swift, installed the formula through real Homebrew from a temporary
+local tap, passed `brew test` (executable/resources/signature), and passed
+`brew style` with no offenses. The app was not launched and no real clipboard,
+history, or Accessibility permission was changed. Publication is pending the
+Git commit/push and public formula verification at this point. The local tap
+currently points to a disposable staging repository; replace its origin with
+the public project URL after pushing. Developer ID/cask release, clean-machine,
+Intel, real paste, and broader app acceptance remain unverified.
+
+Git now exists: branch `main`, origin `https://github.com/kavinash09/nashclips.git`.
+Historical statements below saying no Git repository describe October's state.
+GitHub CLI was installed while investigating publishing access, but its sign-in
+was cancelled following the user's request to use Git. Do not assume CLI auth.
 
 nashclip is a macOS text clipboard history app implemented three ways: Java Swing, JavaFX, and native SwiftUI/AppKit. The project began as a learning exercise and grew into a working drawer interface with persistence, five clip pins, themes, resizing, native hotkeys, and verified-window paste attempts.
 

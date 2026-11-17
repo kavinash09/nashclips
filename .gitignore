@@ -1,0 +1,23 @@
+# Build and verification outputs
+test-results/
+dist/
+.test-tools/
+**/__pycache__/
+*.py[cod]
+java-swing/out/
+java-fx/target/
+nashclip-swift/build/
+nashclip-swift/.build/
+java-swing/native/nashclip-hotkey
+java-swing/native/libnashclip-focus.dylib
+java-fx/native/nashclip-hotkey
+java-fx/native/libnashclip-focus.dylib
+
+# Local editor and OS files
+.DS_Store
+.idea/
+.vscode/
+*.log
+.env
+.env.*
+!.env.example

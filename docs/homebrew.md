@@ -1,5 +1,26 @@
 # Distributing nashclip with Homebrew
 
+## Source preview without a Developer ID certificate
+
+On 2026-11-17 the user confirmed that they do not have an Apple Developer
+membership and requested Homebrew publication using the existing Git client.
+`Formula/nashclip.rb` now provides a personal-tap source build. The existing
+GitHub project doubles as the tap; see [installation and maintenance](../homebrew/README.md).
+This route requires compatible Apple Command Line Tools on each receiving Mac.
+It compiles and ad hoc signs the app locally, preserves history on uninstall,
+and supplies a `nashclip` launch command. It does not distribute a prebuilt app
+or disable Gatekeeper. The formula pins source commit
+`e4da8e80dc33c5ec1d081f8297c40c5574f08467` and its downloaded archive checksum.
+The formula version `1.0-preview.1` identifies this development package; it does
+not change the app's existing `1.0` bundle version or clear release blockers.
+
+Publication and real-install verification for this route are recorded in
+[project memory](project-memory.md). The remaining instructions below cover
+the separate, future signed binary cask route. Their unpublished-cask status
+does not describe the source formula.
+
+## Signed binary cask route
+
 Start with the repository setup and acceptance checklist in [RELEASING.md](../RELEASING.md). End-user build, update, and uninstall instructions are in [INSTALL.md](../INSTALL.md).
 
 The Swift app can be distributed as a **Homebrew cask**. A cask downloads a prebuilt app and installs it in `/Applications`; users do not need Java, Swift, or Xcode. Start with your own GitHub tap, for example `OWNER/homebrew-nashclip`. Once published, users can install it with:

@@ -5,7 +5,7 @@
 
 nashclip is a small clipboard history app for macOS inspired by the quick recall of Windows **Win + V**. It keeps recently copied text within reach in a drawer at the edge of the screen. The project also explores the same app through three UI approaches: Java Swing, JavaFX, and native SwiftUI with AppKit.
 
-**Status:** active development. Local source builds are available; a signed release and Homebrew tap are pending.
+**Status:** active development. Local source builds and a Homebrew source-preview formula are available in this repository; a signed binary release remains pending.
 
 [Installation](INSTALL.md) · [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md) · [Security](SECURITY.md) · [Release guide](RELEASING.md)
 
@@ -48,7 +48,17 @@ Open Terminal in the repository root before running one of these commands. You c
 
 ## Homebrew distribution
 
-The Swift app has [Homebrew packaging tooling and a publishing guide](docs/homebrew.md). It generates a release ZIP, checksum, and cask for your own tap. **No Homebrew package is published yet.** Distribution requires a Developer ID signed, notarized build and release acceptance testing. A local preview is available with `python3 scripts/package-homebrew.py --preview --output dist/homebrew-preview` after building the Swift app.
+The native Swift app has a [source-preview formula](homebrew/README.md). It builds on your Mac using Apple's Command Line Tools, with no paid Apple Developer membership needed. Once the formula commit is pushed, install it with:
+
+```sh
+brew tap kavinash09/nashclip https://github.com/kavinash09/nashclips.git
+brew install --formula kavinash09/nashclip/nashclip
+nashclip
+```
+
+Install compatible Command Line Tools first with `xcode-select --install` if needed. This development preview lives inside Homebrew's directory, not `/Applications`. Quit other variants before launching; automatic paste still requires Accessibility permission. History remains local plaintext. Only the local Apple Silicon build has been validated; the outstanding app acceptance checks remain open.
+
+The separate [binary cask tooling and publishing guide](docs/homebrew.md) generates a release ZIP, checksum, and cask. That prebuilt distribution still requires Developer ID signing, notarization, and release acceptance testing under this project's release policy. No signed binary package has been published. A local package-layout preview is available with `python3 scripts/package-homebrew.py --preview --output dist/homebrew-preview` after building the Swift app.
 
 See the [Homebrew audit](docs/homebrew-audit.md) for packaging fixes, verified checks, and remaining publication requirements.
 

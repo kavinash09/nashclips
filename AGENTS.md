@@ -13,6 +13,19 @@ These files are a handoff, not live system state. Recheck running processes, OS 
 
 ## Current work to resume
 
+2026-11-17: user requested Homebrew publication, confirmed no Apple Developer
+membership, and requested use of the existing Git client. Added a personal-tap
+source formula at `Formula/nashclip.rb` and installation guide in
+`homebrew/README.md`. It pins public source commit `e4da8e8`, builds locally,
+and installs formula version `1.0-preview.1` with a `nashclip` launch command.
+The existing `kavinash09/nashclips` GitHub repository doubles as the tap through
+an explicit URL. Real local Homebrew source installation, bundle/signature
+tests, and formula style checks passed on Apple Silicon. Publication verification
+and local tap remote correction are pending in this checkpoint; see current
+project memory for completion. No real app launch/paste, permission change,
+Developer ID signing, or production approval is implied. The repository now
+has Git on `main` with the public GitHub origin; October's no-Git notes are historical.
+
 Second Homebrew review on 2026-10-11: fixed per-architecture signer/runtime inspection, expanded cask checks to URLs/platform/artifacts/quit-only uninstall, serialized Swift builds, protected rollback backups, and validated plist shape/build-version types. Added `scripts/test-homebrew-cask.py` to CI. Verification: 38 Python tests; 7 altered casks rejected by real Homebrew with 2 passing controls; real Swift rebuild and final preview/extracted signature validated. Latest preview: `dist/homebrew-recheck-final/`. The [audit](docs/homebrew-audit.md#second-pass-additional-defects-fixed) records details. Public release/signing/installation prerequisites remain unchanged.
 
 The subsequent Homebrew scrutiny found and fixed packaging defects; read [Homebrew audit](docs/homebrew-audit.md) first for this work. Homebrew 7 rejected the old minimum-OS string syntax in developer mode; the generated cask now uses `:ventura` and CI runs a real CaskLoader check. Packaging now verifies Mach-O deployment/library paths, embedded licensing, expected `--team-id`, and URL/filename agreement; complete outputs are staged before publication to the local directory. Swift builds start with a fresh bundle and preserve the previous build on compilation failure. Actions use immutable commit pins. Local checks: 33 Python tests, real isolated clean/failing build, corrected cask loaded by Homebrew 7.0.8, preview checksum/extracted signature, and real ad hoc release rejection. No signed positive release or installation has been tested; publication remains blocked on the external prerequisites in the audit. Regenerate older previews.
